@@ -1,0 +1,227 @@
+$primary-color: #333333
+$grey: #999999
+.empty
+    width: 100%
+    height: 40px
+.ways
+    background: rgba(12, 77, 162, 0.07)
+    &__title
+        padding-top: 60px
+        font-style: normal
+        font-weight: bold
+        font-size: 26px
+        line-height: 150%
+        text-align: center
+        color: $primary-color
+    &__content
+        padding-top: 50px
+        padding-bottom: 40px
+.tabs
+    background: #FFFFFF
+    box-shadow: 0px 0px 6px rgba(171, 171, 175, 0.2)
+    border-radius: 15px
+    &__items
+        display: flex
+        background: rgba(12, 77, 162, 0.07)
+        border-radius: 15px 15px 0px 0px
+        border-bottom: 2px solid rgba(12, 77, 162, 0.07)
+    &__item
+        flex: 0 1 25%
+        display: flex
+        justify-content: center
+        align-items: center
+        text-decoration: none
+        color: rgba(12, 77, 162, 0.6)
+        font-style: normal
+        font-weight: bold
+        font-size: 20px
+        line-height: 150%
+        cursor: pointer
+        padding: 19px 0px
+        &:first-child
+            border-radius: 15px 0px 0px 0px
+        &:last-child
+            border-radius: 0px 15px 0px 0px
+        &_active
+            background: #0C4DA2
+            color: #FFFFFF
+    &__block
+        padding: 30px 24px 80px 30px
+        display: none
+        &_active
+            display: block
+    &__wrapper
+        display: flex
+        justify-content: space-between
+        align-items: center
+    &__tutorial
+        width: 412px
+        font-style: normal
+        font-weight: normal
+        font-size: 16px
+        line-height: 150%
+        text-align: center
+        p 
+            margin-bottom: 24px       
+    &__flag
+        display: inline-block
+        transform: translateY(7px)
+    &__more
+        font-style: italic
+        color: $grey
+        display: block
+    &__file
+        margin-top: 4px
+        display: flexbox
+        justify-content: center
+        align-items: center
+        padding: 12px 26px
+        text-transform: uppercase
+        text-decoration: none
+        font-style: normal
+        font-weight: 600
+        font-size: 14px
+        line-height: 140%
+        color: #0C4DA2
+        background: #FFFFFF
+        box-shadow: 0px 0px 6px rgba(12, 77, 162, 0.2)
+        border-radius: 6px
+        width: 152px
+        height: 46px
+    &__slider
+        .slider
+            &__arrow
+                width: 40px
+                height: 40px
+                &_left
+                    background: url(../img/svg/left-tab.svg)
+                &_right
+                    background: url(../img/svg/right-tab.svg)
+            &__items
+                padding: 0 20px
+                flex-direction: row
+            &__dots
+                margin-top: 48px
+            &__item
+                margin: 0
+                width: 270px
+                background: #FFFFFF
+                box-shadow: 0px 0px 8px rgba(12, 77, 162, 0.2)
+                flex-direction: column
+                justify-content: flex-start
+                height: 100%
+                &::before
+                    display: none
+                &:first-child
+                    margin-right: 20px
+.item-top
+    background: #F2F5F9
+    padding: 15px 20px
+    position: relative
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 100%
+    height: 180px
+    &__flag
+        position: absolute
+        top: 20px
+        left: 20px
+.item-descr
+    &__title
+        padding: 18px 20px 0px 20px
+        font-style: normal
+        font-weight: bold
+        font-size: 16px
+        line-height: 130%
+    &__author
+        padding: 8px 20px 28px 20px
+        font-style: italic
+        font-weight: normal
+        font-size: 14px
+        line-height: 150%
+    &__marks
+        display: flex
+        flex-wrap: wrap
+        padding: 0px 20px 14px
+    &__mark
+        border-radius: 6px
+        font-style: normal
+        font-weight: normal
+        font-size: 14px
+        line-height: 150%
+        text-align: center
+        padding: 3px 10px
+        margin-bottom: 6px
+        margin-right: 6px
+        text-decoration: none
+        display: block
+        &_blue
+            background: rgba(92, 128, 188, 0.2)
+            color: #0C4DA2
+        &_green
+            color: #00B5BD
+            background: rgba(0, 181, 189, 0.2)
+        &_orange
+            background: rgba(247, 181, 18, 0.2)
+            color: #F7B512 
+@media screen and (max-width: 1115px)
+    .tabs
+        &__item
+            font-size: 16px
+@media screen and (max-width: 1015px)
+    .tabs
+        &__item
+            font-size: 14px
+        &__tutorial
+            font-size: 14px
+@media screen and (max-width: 985px)
+    .ways
+        .slider
+            &__item
+                &:first-child
+                    display: none
+@media screen and (max-width: 767px)
+    .ways
+        &__title
+            font-size: 16px
+            padding-top: 20px
+        &__content
+            padding-top: 20px
+            padding-bottom: 20px
+    .tabs
+        &__item
+            padding: 10px 5px
+            white-space: pre-wrap
+            text-align: center
+            font-size: 12px
+        &__wrapper
+             flex-direction: column
+        &__tutorial
+            margin-top: 20px
+            width: auto
+        &__slider
+             order: -1
+@media screen and (max-width: 375px)
+    .tabs
+        &__block
+            padding: 15px 10px 30px 10px
+        &__tutorial
+            font-size: 12px
+        &__file
+            font-size: 12px
+    .item-descr
+        &__title
+            font-size: 14px
+        &__author
+            font-size: 12px
+        &__mark
+            font-size: 12px
+    .ways
+        .slider
+            &__items
+                padding: 0
+            &__dots
+                margin-top: 20px
+
+

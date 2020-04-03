@@ -1,0 +1,160 @@
+@mixin text-aside
+    font-style: normal
+    font-weight: bold
+    font-size: 16px
+    line-height: 100%
+    @media screen and (max-width: 767px)
+        font-size: 14px
+    @media screen and (max-width: 375px)
+        font-size: 12px
+$primary-color: #333333
+$active-color: #0C4DA2
+$grey: #999999
+.wrapper-content
+    padding-top: 60px
+    display: flex
+    justify-content: space-between
+    @media screen and (max-width: 767px)
+        margin-top: 25px
+        flex-wrap: wrap
+.aside
+    @media screen and (max-width: 767px)
+        width: 100%
+    &__menu
+        list-style: none
+        background: #FFFFFF
+        box-shadow: 0px 0px 18px rgba(171, 171, 175, 0.45)
+        border-radius: 15px
+        width: 290px
+        margin-bottom: 20px
+        @media screen and (max-width: 767px)
+            width: 100%
+    &__li
+        display: inline-block
+        text-decoration: none
+        @include text-aside
+        color: $primary-color
+        padding: 24px 30px
+        width: 100%
+        @media screen and (max-width: 767px)
+            padding: 15px
+        @media screen and (max-width: 375px)
+            padding: 10px
+        &_active
+            color: $active-color
+            background: rgba(12, 77, 162, 0.07)
+    &__link
+        width: 290px
+        background: rgba(12, 77, 162, 0.2)
+        border-radius: 6px
+        display: flex
+        justify-content: center
+        align-items: center
+        @include text-aside
+        padding: 14px 0
+        margin-bottom: 10px
+        @media screen and (max-width: 767px)
+            width: 100%
+            padding: 10px 0
+        a
+            @include text-aside
+            color: $active-color
+            text-decoration: none
+.video
+    display: flex
+    flex-direction: column
+    align-items: center
+    @media screen and (max-width: 767px)
+        width: 100%
+        margin-top: 20px
+    &__title
+        font-style: normal
+        font-weight: bold
+        font-size: 42px
+        line-height: 140%
+        text-align: center
+        text-transform: uppercase
+        color: $grey
+        max-width: 552px
+        margin-top: 80px
+        margin-bottom: 80px
+        @media screen and (max-width: 767px)
+            margin-top: 20px
+            font-size: 16px
+        @media screen and (max-width: 375px)
+            font-size: 13px
+.slider
+    display: flex
+    align-items: center
+    &__arrow
+        width: 46px
+        height: 46px
+        @media screen and (max-width: 465px)
+            display: none
+        &_left
+            background: url(../img/svg/left.svg)
+        &_right
+            background: url(../img/svg/right.svg)
+    &__items
+        display: flex
+        flex-direction: column
+    &__item
+        width: 720px
+        height: 400px
+        border-radius: 6px
+        background-image: url(../img/video.jpg)
+        background-size: cover
+        background-repeat: no-repeat
+        position: relative
+        z-index: 2
+        display: flex
+        justify-content: center
+        align-items: center
+        margin: 0 24px
+        @media screen and (max-width: 1185px)
+            width: 540px
+            height: 320px
+        @media screen and (max-width: 1015px)
+            width: 450px
+            height: 250px
+        @media screen and (max-width: 915px)
+            width: 336px
+            height: 200px
+            margin: 0 5px
+        @media screen and (max-width: 375px)
+            margin: 0
+            min-height: 160px
+            width: auto
+            min-width: 290px
+
+        &::before
+            content: ''
+            position: absolute
+            width: 100%
+            height: 100%
+            top: 0
+            left: 0
+            background: rgba(12, 77, 162, 0.7)
+            border-radius: 6px
+            z-index: 1
+    &__play
+        z-index: 2
+    &__dots
+        margin-top: 20px
+        display: flex
+        justify-content: center
+    &__dot
+        background-image: url(../img/svg/dot.svg)
+        width: 10px
+        height: 10px
+        margin-right: 14px
+        &_active
+            background-image: url(../img/svg/dot-active.svg)
+   
+
+
+
+        
+
+
+

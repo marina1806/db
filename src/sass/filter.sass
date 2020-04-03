@@ -1,0 +1,282 @@
+$primary-color: #333333
+$grey: #999999
+@mixin placeholder
+    color: rgba(12, 77, 162, 0.4)
+    font-style: normal
+    font-weight: normal
+    font-size: 14px
+    line-height: 140%
+    @media screen and (max-width: 525px)
+        font-size: 12px
+html, body
+    scrollbar-color: rgba(12, 77, 162, 0.07) transparent     
+    scrollbar-width: auto 
+::-webkit-scrollbar 
+    width: 8px
+    background: transparent
+    border-radius: 4px
+::-webkit-scrollbar-thumb 
+    background-color: rgba(12, 77, 162, 0.07)
+    border-radius: 4px
+    height: 30%
+.catalog
+    &__title
+        margin-top: 60px
+        font-style: normal
+        font-weight: bold
+        font-size: 32px
+        line-height: 140%
+        text-transform: uppercase
+        color: $primary-color
+        text-align: center
+        @media screen and (max-width: 915px)
+            font-size: 24px
+            margin-top: 30px
+        @media screen and (max-width: 767px)
+            font-size: 20px
+        @media screen and (max-width: 525px)
+            font-size: 14px
+.wrapper-filter
+    margin-top: 60px
+    background: #FFFFFF
+    box-shadow: 0px 0px 18px rgba(171, 171, 175, 0.45)
+    border-radius: 15px
+    @media screen and (max-width: 915px)
+        margin-top: 30px
+    @media screen and (max-width: 525px)
+        margin-top: 15px
+.filter
+    display: flex
+    @media screen and (max-width: 525px)
+        flex-direction: column
+    &__item
+        flex: 1 0 33.333%
+        margin-top: 33px
+        margin-bottom: 16px
+        padding-left: 7%
+        height: 226px
+        @media screen and (max-width: 915px)
+            margin-top: 20px
+        @media screen and (max-width: 620px)
+            padding-left: 2%
+        @media screen and (max-width: 525px)
+            margin: 10px 0px
+        &:nth-child(2)
+            padding-left: 4%
+            border-right: 2px solid rgba(12, 77, 162, 0.1)
+            border-left: 2px solid rgba(12, 77, 162, 0.1)
+            overflow-y: auto
+            @media screen and (max-width: 620px)
+                padding-left: 2%
+            @media screen and (max-width: 525px)
+                border: none
+                border-top: 2px solid rgba(12, 77, 162, 0.1)
+                border-bottom: 2px solid rgba(12, 77, 162, 0.1)
+                padding-top: 10px
+    &__title
+        font-style: normal
+        font-weight: bold
+        font-size: 20px
+        line-height: 130%
+        color: $primary-color
+        text-transform: uppercase
+        position: relative
+        @media screen and (max-width: 915px)
+            font-size: 16px
+        @media screen and (max-width: 767px)
+            font-size: 14px
+        @media screen and (max-width: 525px)
+            font-size: 12px
+    &__list
+        margin-top: 36px
+        list-style: none
+        @media screen and (max-width: 915px)
+            margin-top: 20px
+    &__name
+        font-style: normal
+        font-weight: bold
+        font-size: 16px
+        line-height: 120%
+        color: $primary-color
+        display: inline-block
+        margin-bottom: 22px
+        @media screen and (max-width: 767px)
+            font-size: 14px
+        @media screen and (max-width: 525px)
+            font-size: 12px
+        
+    &__more
+        transform: translate(-3px, -4px)
+        display: inline-block
+        cursor: pointer
+        @media screen and (max-width: 620px)
+               transform: translate(0px, -3px)
+    &__checkbox
+        margin-bottom: 22px
+        &_item
+            position: absolute
+            z-index: -1
+            opacity: 0
+        &_item + label
+            position: relative
+            padding: 5px 0 0 30px
+            cursor: pointer
+            font-style: normal
+            font-weight: normal
+            font-size: 16px
+            line-height: 120%
+            color: $primary-color
+            @media screen and (max-width: 767px)
+                font-size: 13px
+            @media screen and (max-width: 525px)
+                font-size: 12px
+        &_item + label:before
+            content: ''
+            position: absolute
+            top: 2px
+            left: 0
+            width: 20px
+            height: 20px
+            background: #FFFFFF
+            border: 1px solid #C4C4C4
+            border-radius: 4px
+            transition: .2s
+        &_item
+            &:checked + label:before 
+                background: url(../img/svg/check.svg)
+                background-repeat: no-repeat
+                background-size: contain
+                background-position: center center
+.search
+    display: flex
+    &__form
+        background: rgba(12, 77, 162, 0.07)
+        position: relative
+        width: 83%
+        border-radius: 0 0 0 15px
+    &__input
+        border: none
+        outline: none
+        background: transparent
+        padding: 12px 30px
+        width: 90%
+        @media screen and (max-width: 525px)
+            padding: 9px 10px
+    &__btn
+        border: none
+        outline: none
+        background: transparent
+        background-image: url(../img/svg/search.svg)
+        background-repeat: no-repeat
+        background-size: 20px 20px
+        height: 39px
+        width: 39px
+        position: absolute
+        top: 10px
+        right: -2px
+        cursor: pointer
+    &__clear
+        border: none
+        outline: none
+        background: transparent
+        font-style: normal
+        font-weight: normal
+        font-size: 14px
+        line-height: 140%
+        color: $grey
+        padding: 10px 34px
+        cursor: pointer
+        min-width: 200px
+        @media screen and (max-width: 525px)
+                font-size: 12px
+                padding: 9px 10px
+                min-width: 140px
+        span
+            display: inline-block
+            transform: translate(5px, 1px)
+input::-webkit-input-placeholder
+    @include placeholder
+input:-moz-placeholder
+    @include placeholder
+input:-ms-input-placeholder
+    @include placeholder
+.shown
+    margin-top: 10px
+    margin-bottom: 12px
+    font-size: 14px
+    line-height: 140%
+.result
+    .slider
+        &__dots
+            margin-bottom: 80px
+        &__items
+            padding: 0px 6px
+            flex-direction: row
+        &__item
+            margin: 0px
+            width: 340px
+            background: #FFFFFF
+            box-shadow: 0px 0px 18px rgba(173, 171, 175, 0.65)
+            flex-direction: column
+            justify-content: flex-start
+            height: 100%
+            margin-right: 22px
+            &:last-child
+                margin-right: 0px
+            &::before
+                display: none
+    .item-top
+        background: url(../img/pic.jpg)
+        height: 224px
+    .item-descr
+        position: relative
+        &__title
+            padding: 19px 22px 0px 22px
+        &__author
+            font-style: normal
+            font-size: 16px
+            padding: 20px 22px 48px
+        &__price
+            position: absolute
+            top: 160px
+            right: 22px
+            font-size: 16px
+            span
+                font-weight: bold
+@media screen and (max-width: 1200px)
+    .result
+        .slider
+            justify-content: center
+            &__item
+                &:first-child
+                    display: none
+@media screen and (max-width: 850px)
+    .result
+        .slider
+            &__item
+                &:nth-child(2)
+                    display: none
+@media screen and (max-width: 375px)
+    .result
+        .slider
+            &__item
+                width: 290px
+            &__dots
+                margin-bottom: 20px
+        .item-top
+            height: 180px
+            background-size: contain
+        .item-descr
+            &__author 
+                font-size: 12px
+                padding: 10px 22px 32px
+            &__price 
+                top: 140px;
+                right: 22px;
+                font-size: 12px;
+
+
+                    
+
+
+            
