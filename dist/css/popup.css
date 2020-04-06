@@ -1,0 +1,49 @@
+.popup__form {
+  display: none;
+  -webkit-animation-duration: 1.5s;
+  animation-duration: 1.5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn; }
+  .popup__form_open {
+    display: block; }
+
+.popup {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(17, 17, 17, 0.5);
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  display: none;
+  z-index: 100; }
+  .popup_open {
+    display: block; }
+  .popup__container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background: #fff;
+    border-radius: 10px;
+    min-width: 310px;
+    max-width: 450px;
+    width: 100%; }
+  .popup__wrapper {
+    padding: 30px;
+    position: relative; }
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  cursor: pointer; }
+
+.wrapper-input {
+  margin: 15px 0px; }

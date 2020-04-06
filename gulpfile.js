@@ -2,7 +2,7 @@ var gulp = require('gulp');
 var browserSync = require('browser-sync').create();
 var sass = require('gulp-sass');
 var plumber = require('gulp-plumber');
-var concatCss = require('gulp-concat-css');
+// var concatCss = require('gulp-concat-css');
 var autoprefixer = require('gulp-autoprefixer');
 
 sass.compiler = require('node-sass');
@@ -32,7 +32,7 @@ gulp.task('sass', function() {
             browsers : ['last 4 versions'],
             cascade: false
         }))
-        .pipe(concatCss("main.css"))
+        // .pipe(concatCss("main.css"))
         .pipe(gulp.dest("src/css/"))
         .pipe(plumber())
         .pipe(browserSync.stream());
